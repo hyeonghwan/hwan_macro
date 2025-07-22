@@ -6,5 +6,6 @@ import SwiftCompilerPlugin
 struct HyeongCroPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
         StringifyMacro.self,
+        LoggingMacro.self
     ]
 }
