@@ -24,8 +24,7 @@ let package = Package(
         .macro(
             name: "HyeongCro",
             dependencies: [
-                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-                .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
+                .target(name: "SwiftSyntaxWrapper")
             ]
         ),
         .target(name: "HwanMacros", dependencies: ["HyeongCro"]),
@@ -42,5 +41,7 @@ let package = Package(
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
             ]
         ),
+        
+        .binaryTarget(name: "SwiftSyntaxWrapper", path: "Sources/XCFramework/SwiftSyntaxWrapper.xcframework")
     ]
 )
