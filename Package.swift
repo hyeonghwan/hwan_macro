@@ -42,6 +42,6 @@ let package = Package(
             ]
         ),
         
-        .binaryTarget(name: "SwiftSyntaxWrapper", path: "Sources/XCFramework/SwiftSyntaxWrapper.xcframework")
+        .binaryTarget(name: "SwiftSyntaxWrapper", path: "XCFramework/SwiftSyntaxWrapper.xcframework")
     ]
 )
