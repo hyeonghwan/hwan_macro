@@ -17,14 +17,12 @@ let package = Package(
             targets: ["HwanMacrosClient"]
         ),
     ],
-    dependencies: [
-        .package(url: "https://github.com/swiftlang/swift-syntax.git", exact: "510.0.2"),
-    ],
+    dependencies: [ ],
     targets: [
         .macro(
             name: "HyeongCro",
             dependencies: [
-                .target(name: "SwiftSyntaxWrapper")
+                .target(name: "SwiftSyntaxWrapper"),
             ]
         ),
         .target(name: "HwanMacros", dependencies: ["HyeongCro"]),
@@ -38,10 +36,10 @@ let package = Package(
             name: "HwanMacrosTests",
             dependencies: [
                 "HyeongCro",
-                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+                .target(name: "SwiftSyntaxWrapper"),
             ]
         ),
         
-        .binaryTarget(name: "SwiftSyntaxWrapper", path: "XCFramework/SwiftSyntaxWrapper.xcframework")
+        .binaryTarget(name: "SwiftSyntaxWrapper", path: "Sources/XCFramework/SwiftSyntaxWrapper.xcframework")
     ]
 )
