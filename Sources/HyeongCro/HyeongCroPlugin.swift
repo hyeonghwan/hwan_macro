@@ -9,3 +9,6 @@ struct HyeongCroPlugin: CompilerPlugin {
         LoggingMacro.self
     ]
 }
+
+// mkdir MyMacro && cd MyMacro
+// swift package init --type macro
